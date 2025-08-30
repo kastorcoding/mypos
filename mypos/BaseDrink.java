@@ -1,3 +1,5 @@
+package mypos;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -27,7 +29,7 @@ public abstract class BaseDrink {
         if(isModificationAllowed(mod)) {
             modifications.add(mod);
         } else {
-            System.out.println("Modification not allowed LOL");
+            System.out.println(mod.getModification() + " not allowed for " + getTemperature() + " " + getDrinkType());
         }
     }
 

@@ -1,7 +1,10 @@
-abstract class Modification{
+package mypos;
+
+public abstract class Modification{
     private final String name;
     public Modification(String name) {this.name = name;}
     public abstract double getPriceModifier();
+    public abstract String getModification();
     @Override
     public String toString() {return name;}
 }
@@ -18,6 +21,9 @@ class Syrup extends Modification{
     }
     @Override
     public double getPriceModifier() {return 0.80;}
+
+    @Override
+    public String getModification() {return "SYRUP";}
 }
 
 class Sugar extends Modification{
@@ -30,6 +36,9 @@ class Sugar extends Modification{
     }
     @Override
     public double getPriceModifier() {return 0.00;}
+
+    @Override
+    public String getModification() {return "SUGAR";}
 }
 
 class Creamer extends Modification{
@@ -42,6 +51,9 @@ class Creamer extends Modification{
     }
     @Override
     public double getPriceModifier() {return 0.00;}
+
+    @Override
+    public String getModification() {return "CREAMER";}
 }
 
 class Drizzle extends Modification{
@@ -52,12 +64,18 @@ class Drizzle extends Modification{
     }
     @Override
     public double getPriceModifier() {return 0.00;}
+
+    @Override
+    public String getModification() {return "DRIZZLE";}
 }
 
 class WhipCream extends Modification{
     public WhipCream() {super("Whip Cream");}
     @Override
     public double getPriceModifier() {return 0.00;}
+
+    @Override
+    public String getModification() {return "WHIP_CREAM";}
 }
 
 class ColdFoam extends Modification {
@@ -68,6 +86,9 @@ class ColdFoam extends Modification {
     }
     @Override
     public double getPriceModifier() {return 0.00;}
+
+    @Override
+    public String getModification() {return "COLD_FOAM";}
 }
 
 class GenericTopping extends Modification{
@@ -78,4 +99,7 @@ class GenericTopping extends Modification{
     }
     @Override
     public double getPriceModifier() {return 0.00;}
+
+    @Override
+    public String getModification() {return "GENERIC_TOPPING";}
 }

@@ -8,10 +8,8 @@ In 2022 I made a POS system for CMSC202 at my local community college. This was 
 
 ## Current Features
 
-# BaseDrink Class
+- BaseDrink Class
 
-# Modifications
+- Modifications
 
-# Customizable Drink Types
-
-
+- Customizable Drink Types

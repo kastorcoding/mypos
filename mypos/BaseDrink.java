@@ -8,9 +8,9 @@ public abstract class BaseDrink {
     private String name; // ex. Latte
     private Size size; // small, medium, or large
     private Temperature temperature; // hot or iced
-    private byte shots; // # of espresso shots
-    private MilkBase milkBase;
-    private List<Modification> modifications;
+    private int shots; // # of espresso shots
+    private MilkBase milkBase; // type of milk the drink is mainly made with
+    private List<Modification> modifications; // any # of modifications
 
     public BaseDrink(String name, Size size, Temperature temperature, MilkBase milkBase) {
         this.name = name;
@@ -58,15 +58,17 @@ public abstract class BaseDrink {
     public String getName() {return name;}
     public Size getSize() {return size;}
     public Temperature getTemperature() {return temperature;}
-    public byte getShots() {return shots;}
+    public int getShots() {return shots;}
     public MilkBase getMilkBase() {return milkBase;}
     public List<Modification> getModifications() {return modifications;}
 
     // Setters
     public void setSelection(boolean selection) {selected = selection;}
     public void setSize(Size newSize) {size = newSize;}
-    public void setShots(byte num) {shots = num;}
-    public void addShot() {shots += shots;}
+    public void setTemperature(Temperature newTemperature) {temperature = newTemperature;}
+    public void setShots(int num) {shots = num;}
+    public void addShot() {shots += 1;}
+    public void setMilkBase(MilkBase newMilkBase) {milkBase = newMilkBase;}
 
 
     // Enums

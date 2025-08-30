@@ -3,12 +3,13 @@ package mypos.drinks;
 import mypos.BaseDrink;
 import mypos.Modification;
 
-public class Latte extends BaseDrink {
-    public Latte() {
-        // Defaults to a Medium Hot Latte with 2% Milk
-        super("Latte", BaseDrink.Size.MEDIUM, BaseDrink.Temperature.HOT, BaseDrink.MilkBase.TWO_PERCENT);
+// DrinkTemplate should be the name of the drink, like a latte, and should be the filename as well
+public class DrinkTemplate extends BaseDrink {
+    public DrinkTemplate() {
+        // Sets drink name and default parameters such as size, temperature, and milk base
+        super("DRINK_NAME", BaseDrink.Size.MEDIUM, BaseDrink.Temperature.HOT, BaseDrink.MilkBase.TWO_PERCENT);
 
-        // Espresso Shots
+        // If a drink has espresso shots, you can set them based on size or remove the case statement and just use setShots();
         switch(getSize()) {
             case SMALL:
                 setShots(1);
@@ -23,6 +24,7 @@ public class Latte extends BaseDrink {
                 }
                 break;
         }
+
     }
 
     @Override
@@ -54,14 +56,17 @@ public class Latte extends BaseDrink {
 
     @Override
     public String getDrinkType() {
-        return "Latte";
+        return "DRINK_NAME";
     }
 
     @Override
     protected boolean isModificationAllowed(Modification mod) {
-        if(getTemperature() == BaseDrink.Temperature.HOT && mod.getModification() == "COLD_FOAM") {
+        // Example of a drink modification restriction
+        /*if(getTemperature() == BaseDrink.Temperature.HOT && mod.getModification() == "COLD_FOAM") {
             return false;
-        }
+        }*/
         return true;
     }
+
+    
 }

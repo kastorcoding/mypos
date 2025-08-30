@@ -3,23 +3,22 @@ package mypos.drinks;
 import mypos.BaseDrink;
 import mypos.Modification;
 
-public class Latte extends BaseDrink {
-    public Latte() {
-        // Defaults to a Medium Hot Latte with 2% Milk
-        super("Latte", BaseDrink.Size.MEDIUM, BaseDrink.Temperature.HOT, BaseDrink.MilkBase.TWO_PERCENT);
+public class FlatWhite extends BaseDrink {
+    public FlatWhite() {
+        super("Flat White", BaseDrink.Size.MEDIUM, BaseDrink.Temperature.HOT, BaseDrink.MilkBase.WHOLE);
 
         // Espresso Shots
         switch(getSize()) {
             case SMALL:
-                setShots(1);
+                setShots(2);
                 break;
             case MEDIUM:
-                setShots(2);
+                setShots(3);
                 break;
             case LARGE:
-                setShots(2);
+                setShots(3);
                 if(getTemperature() == BaseDrink.Temperature.ICED) {
-                    setShots(3);
+                    setShots(4);
                 }
                 break;
         }
@@ -30,13 +29,13 @@ public class Latte extends BaseDrink {
         double basePrice = 0;
         switch(getSize()) {
             case SMALL:
-                basePrice = 3.75; // Small Price
+                basePrice = 4.00; // Small Price
                 break;
             case MEDIUM:
-                basePrice = 4.25; // Medium Price
+                basePrice = 4.50; // Medium Price
                 break;
             case LARGE:
-                basePrice = 4.75; // Large Price
+                basePrice = 5.00; // Large Price
                 break;
         }
 
@@ -54,7 +53,7 @@ public class Latte extends BaseDrink {
 
     @Override
     public String getDrinkType() {
-        return "Latte";
+        return "Flat White";
     }
 
     @Override
@@ -64,4 +63,6 @@ public class Latte extends BaseDrink {
         }
         return true;
     }
+
+    
 }

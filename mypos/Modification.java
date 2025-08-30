@@ -10,6 +10,22 @@ public abstract class Modification{
 }
 
 // Drink Modifications
+
+// Modification Template / Generic filler for things like cinnamon
+class GenericTopping extends Modification{
+    private String topping;
+    public GenericTopping(String topping) {
+        super(topping);
+        this.topping = topping;
+    }
+    @Override
+    public double getPriceModifier() {return 0.00;}
+
+    @Override
+    public String getModification() {return "GENERIC_TOPPING";}
+}
+
+
 class Syrup extends Modification{
     private int pumps;
     private String flavor;
@@ -63,7 +79,7 @@ class Drizzle extends Modification{
         this.flavor = flavor;
     }
     @Override
-    public double getPriceModifier() {return 0.00;}
+    public double getPriceModifier() {return 0.75;}
 
     @Override
     public String getModification() {return "DRIZZLE";}
@@ -85,21 +101,8 @@ class ColdFoam extends Modification {
         this.flavor = flavor;
     }
     @Override
-    public double getPriceModifier() {return 0.00;}
+    public double getPriceModifier() {return 1.25;}
 
     @Override
     public String getModification() {return "COLD_FOAM";}
-}
-
-class GenericTopping extends Modification{
-    private String topping;
-    public GenericTopping(String topping) {
-        super(topping);
-        this.topping = topping;
-    }
-    @Override
-    public double getPriceModifier() {return 0.00;}
-
-    @Override
-    public String getModification() {return "GENERIC_TOPPING";}
 }
